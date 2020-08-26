@@ -38,3 +38,6 @@ Getting info for VIN: {vin}
 ```
 
 The `below`, `average`, and `above` columns represent the first quartile, mean, and third quartile market values, as estimated from vinaudit.com
+
+---
+<div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
