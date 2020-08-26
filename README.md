@@ -1,4 +1,4 @@
-# Used Car Web Scraper Bot
+# <img height="35px" src="https://ghcdn.rawgit.org/bluginbuhl/svg-icons/main/svg/car.svg"></img> Used Car Web Scraper Bot
 
 A simple utility for scraping used car info based on VIN.
 
