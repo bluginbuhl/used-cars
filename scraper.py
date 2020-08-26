@@ -9,10 +9,17 @@ PATH = "C:\Program Files (x86)\chromedriver.exe"
 URL = "https://www.vinaudit.com/market-value-tool"
 
 chromeOptions = Options()
+
+# change to False if you want to watch the browser get the data!
 chromeOptions.headless = True
+
+# silence debug messages from ChromeDriver
 chromeOptions.add_argument("--log-level=3")
 
+# start the browser
 driver = webdriver.Chrome(PATH, options=chromeOptions)
+
+# get the webpage from URL
 driver.get(URL)
 
 
@@ -28,10 +35,8 @@ def parse_mileage():
     mileage += string.split(" ")[0].replace(',', '')
     return int(mileage)
 
-    
 def get_vehicle_make_and_model():
     return driver.find_element_by_id('va_mv_vehicle1_text').get_attribute("innerHTML")
-    
 
 def get_market_values(vin):
     driver.refresh()
@@ -79,5 +84,5 @@ for vin in VIN_LIST:
 column_order = ['vin', 'year', 'make', 'model', 'trim', 'mileage', 'below', 'average', 'above']
 
 df = df[column_order]
-print('\n -- DATA SUMMARY --')
+print('\n -- DATA SUMMARY --\n\n* market values calculated using the mileage from VinAudit; may differ from actual mileage\n')
 print(df)
